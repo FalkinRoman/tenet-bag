@@ -28,4 +28,15 @@ window.addEventListener('scroll', () => {
     if (firstScreen) {
         firstScreen.style.height = `${window.innerHeight}px`;
     }
-}); 
+});
+
+function setImageContainerHeight() {
+    const vh = window.innerHeight * 0.55;
+    const imageContainer = document.querySelector('.image-container');
+    if (imageContainer) {
+        imageContainer.style.height = vh + 'px';
+    }
+}
+
+window.addEventListener('DOMContentLoaded', setImageContainerHeight);
+window.addEventListener('resize', setImageContainerHeight); 
