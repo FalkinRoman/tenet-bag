@@ -1,0 +1,146 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Первый экран */
+.first-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: clamp(24px, 5vw, 48px);
+}
+
+p {
+    color: #666;
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.image-container {
+    height: 55vh;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стили для блоков */
+.blocks-container {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.block {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.block:hover {
+    transform: translateY(-5px);
+}
+
+.block h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: clamp(20px, 3vw, 32px);
+}
+
+.block p {
+    color: #555;
+    font-size: clamp(14px, 1.5vw, 18px);
+}
+
+/* Мобильные устройства (до 576px) */
+@media screen and (max-width: 576px) {
+    .content-wrapper {
+        padding: 15px;
+    }
+    
+    .content {
+        padding: 10px;
+    }
+    
+    .blocks-container {
+        padding: 20px 15px;
+    }
+    
+    .block {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Планшеты (от 577px до 992px) */
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .content-wrapper {
+        padding: 25px;
+    }
+    
+    .content {
+        padding: 20px;
+    }
+    
+    .blocks-container {
+        padding: 30px 20px;
+    }
+    
+    .block {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Десктопы (от 993px) */
+@media screen and (min-width: 993px) {
+    .content-wrapper {
+        padding: 30px;
+    }
+    
+    .content {
+        padding: 30px;
+    }
+    
+    .blocks-container {
+        padding: 50px 30px;
+    }
+    
+    .block {
+        padding: 40px;
+        margin-bottom: 40px;
+    }
+} 
