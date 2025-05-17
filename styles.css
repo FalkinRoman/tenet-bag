@@ -21,27 +21,29 @@ body {
 .first-screen {
     position: relative;
     width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .content-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
-    height: 45vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     background-color: #f5f5f5;
+    flex: 1;
 }
 
 .content {
     text-align: center;
     max-width: 800px;
     width: 100%;
+    padding: 40px 20px;
+    margin: 0 auto;
 }
 
 h1 {
@@ -56,36 +58,17 @@ p {
 }
 
 .image-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    height: 55vh;
     overflow: hidden;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    perspective: 1000;
-    -webkit-perspective: 1000;
-    will-change: transform;
+    aspect-ratio: 16/9;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
+    display: block;
     object-fit: cover;
     object-position: center;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    perspective: 1000;
-    -webkit-perspective: 1000;
-    will-change: transform;
-    -webkit-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
 }
 
 /* Стили для блоков */
@@ -124,10 +107,15 @@ p {
 @media screen and (max-width: 576px) {
     .content-wrapper {
         padding: 15px;
+        min-height: 40vh;
     }
     
     .content {
-        padding: 10px;
+        padding: 20px 10px;
+    }
+
+    .image-container {
+        aspect-ratio: 4/3;
     }
     
     .blocks-container {
@@ -138,26 +126,21 @@ p {
         padding: 20px;
         margin-bottom: 20px;
     }
-
-    .image-container {
-        transform: none;
-        -webkit-transform: none;
-    }
-
-    .image-container img {
-        transform: none;
-        -webkit-transform: none;
-    }
 }
 
 /* Планшеты (от 577px до 992px) */
 @media screen and (min-width: 577px) and (max-width: 992px) {
     .content-wrapper {
         padding: 25px;
+        min-height: 45vh;
     }
     
     .content {
-        padding: 20px;
+        padding: 30px 20px;
+    }
+
+    .image-container {
+        aspect-ratio: 16/9;
     }
     
     .blocks-container {
@@ -174,10 +157,15 @@ p {
 @media screen and (min-width: 993px) {
     .content-wrapper {
         padding: 30px;
+        min-height: 50vh;
     }
     
     .content {
-        padding: 30px;
+        padding: 40px 30px;
+    }
+
+    .image-container {
+        aspect-ratio: 21/9;
     }
     
     .blocks-container {
