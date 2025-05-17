@@ -39,4 +39,4 @@ function setImageContainerHeight() {
 }
 
 window.addEventListener('DOMContentLoaded', setImageContainerHeight);
-window.addEventListener('resize', setImageContainerHeight); 
+// window.addEventListener('resize', setImageContainerHeight); // закомментируй или убери 
